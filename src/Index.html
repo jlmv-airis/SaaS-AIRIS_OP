@@ -553,12 +553,12 @@ body {
         </div>
       <? } else { ?>
         <div style="width:80px;height:80px;border-radius:24px;background:linear-gradient(135deg, var(--accent), #6c5ce7);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;box-shadow: 0 0 50px var(--accent-glow);">
-          <i class="fas fa-scale-balanced"></i>
+          <i class="fas fa-database"></i>
         </div>
       <? } ?>
     </div>
     <h1 class="login-title">SaaS AIRIS</h1>
-    <p class="login-sub"><span>Legalidad</span> y <span>Materialidad</span></p>
+    <p class="login-sub"><span>Operaciones</span></p>
     <div class="login-divider">Acceso al sistema</div>
     <input type="text" id="loginUser" class="login-input" placeholder="Nombre de usuario" autocomplete="off" onkeydown="if(event.key==='Enter') document.getElementById('loginPassword').focus()" style="margin-bottom:12px;">
     <input type="password" id="loginPassword" class="login-input" placeholder="Contraseña" autocomplete="off" onkeydown="if(event.key==='Enter') handleLogin()">
@@ -576,11 +576,11 @@ body {
         <? if (logoBase64) { ?>
           <img src="<?!= logoBase64 ?>" style="width:100%;height:100%;object-fit:cover;">
         <? } else { ?>
-          <i class="fas fa-scale-balanced"></i>
-        <? } ?>
-      </div>
-      <div>
-        <span class="header-title">SaaS AIRIS</span>
+<i class="fas fa-database"></i>
+      <? } ?>
+    </div>
+    <div>
+      <span class="header-title">SaaS AIRIS</span>
         <span class="header-badge" id="roleBadge">Admin</span>
       </div>
     </div>
@@ -611,8 +611,8 @@ body {
       </div>
       <div class="welcome-text">
         Bienvenido <strong>Administrador</strong> al sistema <strong>SaaS AIRIS</strong>.<br><br>
-        Panel de control para la gestión de <strong>Legalidad</strong> y <strong>Materialidad</strong>.<br><br>
-        <span style="font-size:14px;color:var(--text-secondary);">Próximamente: Módulo de Operadores, Proyectos, Checklists y más.</span>
+        Módulo de recopilación masiva de <strong>información</strong>.<br><br>
+        <span style="font-size:14px;color:var(--text-secondary);">Próximamente: Módulo de captura, validación y reportes.</span>
       </div>
     </div>
   </main>

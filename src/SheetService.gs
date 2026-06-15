@@ -1,5 +1,12 @@
+// Sheet Names
 var SHEET_CONFIG = 'Config';
 var SHEET_LOGS = 'Logs';
+var SHEET_USUARIOS = 'Usuarios';
+var SHEET_EMPRESAS = 'Empresas';
+var SHEET_MOVIMIENTOS = 'Movimientos';
+var SHEET_FACTURAS = 'Facturas';
+var SHEET_CATEGORIAS = 'Categorias';
+var SHEET_REPORTES = 'Reportes';
 
 function ensureSheets() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -7,7 +14,13 @@ function ensureSheets() {
 
   var required = [
     { name: SHEET_CONFIG, headers: ['key', 'value'] },
-    { name: SHEET_LOGS, headers: ['timestamp', 'user', 'action', 'detail'] }
+    { name: SHEET_LOGS, headers: ['timestamp', 'user', 'action', 'detail'] },
+    { name: SHEET_USUARIOS, headers: ['id', 'nombre', 'email', 'rol', 'estado', 'fecha_creacion'] },
+    { name: SHEET_EMPRESAS, headers: ['id', 'nombre', 'rfc', 'direccion', 'telefono', 'email_contacto', 'estado', 'fecha_creacion'] },
+    { name: SHEET_MOVIMIENTOS, headers: ['id', 'empresa_id', 'fecha', 'tipo', 'categoria', 'concepto', 'monto', 'usuario', 'comprobante', 'notas', 'estado'] },
+    { name: SHEET_FACTURAS, headers: ['id', 'empresa_id', 'numero_factura', 'fecha_emision', 'fecha_vencimiento', 'proveedor', 'monto', 'impuestos', 'total', 'estado', 'archivo'] },
+    { name: SHEET_CATEGORIAS, headers: ['id', 'nombre', 'tipo', 'descripcion'] },
+    { name: SHEET_REPORTES, headers: ['id', 'nombre', 'tipo', 'periodo', 'fecha_generacion', 'archivo_url'] }
   ];
 
   required.forEach(function(sheet) {
@@ -15,6 +28,9 @@ function ensureSheets() {
       var newSheet = ss.insertSheet(sheet.name);
       newSheet.appendRow(sheet.headers);
       newSheet.setFrozenRows(1);
+      // Format header row
+      var headerRange = newSheet.getRange(1, 1, 1, sheet.headers.length);
+      headerRange.setBackground('#4285F4').setFontColor('#ffffff').setFontWeight('bold');
     }
   });
 
