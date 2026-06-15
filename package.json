@@ -1,0 +1,17 @@
+{
+  "name": "saas-airis-op",
+  "version": "1.0.0",
+  "description": "SaaS AIRIS - Gestión de Legalidad y Materialidad",
+  "scripts": {
+    "lint": "eslint src/",
+    "push": "clasp push",
+    "deploy": "clasp deploy",
+    "open": "clasp open"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.3.0",
+    "@types/google-apps-script": "^1.0.83",
+    "eslint": "^8.57.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
